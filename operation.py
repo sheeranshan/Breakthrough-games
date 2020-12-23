@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 # operation.py
-#
-# 简单工厂模式
-# 定义玩家操作，前后左右行走和攻击五种操作方式
+# 定义玩家操作，前后左右行走、攻击和退出六种操作方式，并添加空操作
 
 from roleinformation import *
 from enemy import *
@@ -37,6 +35,9 @@ class OperationAtc(Operation):
         else:
             return "missed attack"
 
+    def isNil(self):
+        return False
+
 
 # 向上走
 class OperationUp(Operation):
@@ -44,6 +45,9 @@ class OperationUp(Operation):
         if self.role_a.get_location()[1] > 0:
             self.role_a.set_location(self.role_a.get_location()[0], self.role_a.get_location()[1]-1)
             return self.role_a.get_name() + " go forward "
+
+    def isNil(self):
+        return False
 
 
 # 向下走
@@ -53,6 +57,9 @@ class OperationDown(Operation):
             self.role_a.set_location(self.role_a.get_location()[0], self.role_a.get_location()[1]+1)
             return self.role_a.get_name() + " go back "
 
+    def isNil(self):
+        return False
+
 
 # 向左走
 class OperationLeft(Operation):
@@ -60,6 +67,9 @@ class OperationLeft(Operation):
         if self.role_a.get_location()[0] > 0:
             self.role_a.set_location(self.role_a.get_location()[0]-1, self.role_a.get_location()[1])
             return self.role_a.get_name() + " go left "
+
+    def isNil(self):
+        return False
 
 
 # 向右走
@@ -69,17 +79,26 @@ class OperationRight(Operation):
             self.role_a.set_location(self.role_a.get_location()[0]+1, self.role_a.get_location()[1])
             return self.role_a.get_name() + " go right "
 
+    def isNil(self):
+        return False
+
 
 # 退出
 class OperationExit(Operation):
     def op(self):
         return "you failed"
 
+    def isNil(self):
+        return False
+
 
 # 空操作
 class OperationPass(Operation):
     def op(self):
         return "pass"
+
+    def isNil(self):
+        return True
 
 
 # 操作工厂

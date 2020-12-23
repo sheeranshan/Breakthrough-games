@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 # maps.py
-# 建造者模式
-#
 # 用于生成地图，包括地形（landform）、角色（role）、敌人（enemy）
 
 from abc import ABCMeta, abstractmethod

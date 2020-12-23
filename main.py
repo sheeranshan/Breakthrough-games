@@ -16,14 +16,20 @@ if __name__ == '__main__':
     enemies_1 = []
     for i in range(0, 20):
         j = random.randrange(0, 2)
-        if j == 0:
-            enemy_1 = MageCreator().create()
-            enemy_1.set_location(random.randrange(2, 40), random.randrange(1, 20))
-            enemies_1.append(enemy_1)
-        else:
+        if i == 3:
             enemy_1 = WarriorCreator().create()
             enemy_1.set_location(random.randrange(2, 40), random.randrange(1, 20))
-            enemies_1.append(enemy_1)
+            d_1 = RebornWarrior(enemy_1)
+            enemies_1.append(d_1)
+        else:
+            if j == 0:
+                enemy_1 = MageCreator().create()
+                enemy_1.set_location(random.randrange(2, 40), random.randrange(1, 20))
+                enemies_1.append(enemy_1)
+            else:
+                enemy_1 = WarriorCreator().create()
+                enemy_1.set_location(random.randrange(2, 40), random.randrange(1, 20))
+                enemies_1.append(enemy_1)
 
     # 生成地图
     b1 = BuilderA()
@@ -39,14 +45,20 @@ if __name__ == '__main__':
     enemies_2 = []
     for i in range(0, 20):
         j = random.randrange(0, 2)
-        if j == 0:
-            enemy_1 = MageCreator().create()
-            enemy_1.set_location(random.randrange(2, 40), random.randrange(1, 20))
-            enemies_2.append(enemy_1)
-        else:
+        if i == 3:
             enemy_1 = WarriorCreator().create()
             enemy_1.set_location(random.randrange(2, 40), random.randrange(1, 20))
-            enemies_2.append(enemy_1)
+            d_1 = RebornWarrior(enemy_1)
+            enemies_2.append(d_1)
+        else:
+            if j == 0:
+                enemy_1 = MageCreator().create()
+                enemy_1.set_location(random.randrange(2, 40), random.randrange(1, 20))
+                enemies_2.append(enemy_1)
+            else:
+                enemy_1 = WarriorCreator().create()
+                enemy_1.set_location(random.randrange(2, 40), random.randrange(1, 20))
+                enemies_2.append(enemy_1)
 
     b2 = BuilderB()
     Director.construct(b2, role_2, enemies_2)

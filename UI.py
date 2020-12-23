@@ -18,7 +18,7 @@ class GameUI:
         # 像素点宽度
         self.step = 15
         # 计时器
-        self.time = 20
+        self.time = 25
         # 当前层数
         self.level = 1
         # 当前层敌人数量
@@ -132,10 +132,11 @@ class GameUI:
             messagebox.showinfo("result", "you failed")
             self.root.destroy()
         if operation_result == "attack":
-            dead = DecoratorDead(opt.role_b).dead()
+            dead = opt.role_b.dead()
             messagebox.showinfo("result", dead)
-            self.canvas.delete("enemy%d" % i)
-            self.canvas.delete("enemy_name%d" % i)
+            if dead == "%s is dead" % opt.role_b.enemy_type():
+                self.canvas.delete("enemy%d" % i)
+                self.canvas.delete("enemy_name%d" % i)
         if operation_result == "missed attack":
             messagebox.showinfo("result", "missed attack")
 
