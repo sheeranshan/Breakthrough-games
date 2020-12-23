@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
+
 # operation.py
+# 空对象模式
 # 定义玩家操作，前后左右行走、攻击和退出六种操作方式，并添加空操作
 
 from roleinformation import *

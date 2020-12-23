@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 
 # changer.py
+# 装饰模式
 # 为某些敌人对象添加 reborn() 方法
 
 from abc import ABCMeta, abstractmethod

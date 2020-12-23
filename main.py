@@ -13,6 +13,7 @@ if __name__ == '__main__':
     role_1.set_cloth(ConcreteClothesFactory2())
     role_1.set_location(1, 1)
 
+    # 随机分配敌人
     enemies_1 = []
     for i in range(0, 20):
         j = random.randrange(0, 2)

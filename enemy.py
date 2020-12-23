@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 
 # enemy.py
+# 工厂方法模式
 # 定义两种敌人，法师和战士
 
 from abc import ABCMeta, abstractmethod
